@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuthStore } from './store/authStore';
+import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 
 const queryClient = new QueryClient({
@@ -48,6 +49,14 @@ function App() {
         <div className="App">
           <Routes>
             {/* Public Routes */}
+            <Route 
+              path="/login" 
+              element={
+                <PublicRoute>
+                  <Login />
+                </PublicRoute>
+              } 
+            />
             <Route 
               path="/register" 
               element={
