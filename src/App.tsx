@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuthStore } from './store/authStore';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
+import { Dashboard } from './pages/Dashboard';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -67,8 +68,14 @@ function App() {
             />
             
             {/* Private Routes */}
-            
-         
+          <Route 
+              path="/dashboard" 
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              } 
+            />
             
             {/* 404 Route */}
             <Route 
