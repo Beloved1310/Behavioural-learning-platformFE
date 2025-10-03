@@ -5,6 +5,7 @@ import { useAuthStore } from './store/authStore';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
+import { Gamification } from './pages/Gamification';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -88,6 +89,14 @@ function App() {
                   </div>
                 </div>
               } 
+            />
+             <Route
+              path="/gamification"
+              element={
+                <PrivateRoute>
+                  <Gamification />
+                </PrivateRoute>
+              }
             />
           </Routes>
         </div>
