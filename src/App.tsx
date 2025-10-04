@@ -94,6 +94,14 @@ function App() {
                 </PrivateRoute>
               }
             />
+             <Route
+              path="/sessions"
+              element={
+                <PrivateRoute>
+                  <Sessions />
+                </PrivateRoute>
+              }
+            />
             
             {/* 404 Route */}
             <Route 
