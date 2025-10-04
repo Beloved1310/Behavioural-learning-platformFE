@@ -6,6 +6,7 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
 import { Gamification } from './pages/Gamification';
+import { Chat } from './pages/Chat';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -77,6 +78,22 @@ function App() {
                 </PrivateRoute>
               } 
             />
+             <Route 
+              path="/chat" 
+              element={
+                <PrivateRoute>
+                  <Chat />
+                </PrivateRoute>
+              } 
+            />
+            <Route
+              path="/gamification"
+              element={
+                <PrivateRoute>
+                  <Gamification />
+                </PrivateRoute>
+              }
+            />
             
             {/* 404 Route */}
             <Route 
@@ -89,14 +106,6 @@ function App() {
                   </div>
                 </div>
               } 
-            />
-             <Route
-              path="/gamification"
-              element={
-                <PrivateRoute>
-                  <Gamification />
-                </PrivateRoute>
-              }
             />
           </Routes>
         </div>
