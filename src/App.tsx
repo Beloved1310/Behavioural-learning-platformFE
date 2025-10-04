@@ -5,9 +5,11 @@ import { useAuthStore } from './store/authStore';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
-import { Gamification } from './pages/Gamification';
 import { Chat } from './pages/Chat';
+import { Gamification } from './pages/Gamification';
 import { Sessions } from './pages/Sessions';
+import { BehavioralDashboard } from './pages/BehavioralDashboard';
+import { Payment } from './pages/Payment';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -71,7 +73,7 @@ function App() {
             />
             
             {/* Private Routes */}
-          <Route 
+            <Route 
               path="/dashboard" 
               element={
                 <PrivateRoute>
@@ -79,7 +81,7 @@ function App() {
                 </PrivateRoute>
               } 
             />
-             <Route 
+            <Route 
               path="/chat" 
               element={
                 <PrivateRoute>
@@ -95,7 +97,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-             <Route
+            <Route
               path="/sessions"
               element={
                 <PrivateRoute>
@@ -103,7 +105,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-             <Route
+            <Route
               path="/behavioral"
               element={
                 <PrivateRoute>
@@ -119,6 +121,10 @@ function App() {
                 </PrivateRoute>
               }
             />
+
+            {/* Default redirect */}
+            <Route path="/" element={<Navigate to="/dashboard" />} />
+            
             {/* 404 Route */}
             <Route 
               path="*" 
