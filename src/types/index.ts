@@ -8,6 +8,25 @@ export interface User {
   profileImage?: string;
   isVerified: boolean;
   createdAt: string;
+  dateOfBirth?: string;
+  parentEmail?: string;
+  parentalConsentStatus?: 'pending' | 'approved' | 'rejected';
+  parentalConsentDate?: string;
+  gradeLevel?: string;
+  academicGoals?: string[];
+  subjects?: string[];
+  learningStyle?: 'visual' | 'auditory' | 'kinesthetic' | 'reading_writing';
+  preferences?: UserPreferences;
+}
+
+export interface UserPreferences {
+  emailNotifications: boolean;
+  pushNotifications: boolean;
+  sessionReminders: boolean;
+  weeklyReport: boolean;
+  theme?: 'light' | 'dark' | 'auto';
+  language?: string;
+  timezone?: string;
 }
 
 export const UserRole = {

@@ -58,8 +58,15 @@ export const RegisterForm: React.FC = () => {
     try {
       clearError();
       await registerUser(data);
-      // Navigate to login page after successful registration
-      navigate('/login');
+
+      // Check if parental consent is required
+      if (isStudentUnder18()) {
+        // Show success message with parental consent info
+        navigate('/registration-pending');
+      } else {
+        // Navigate to login page after successful registration
+        navigate('/login');
+      }
     } catch (error) {
       // Error is handled by the store
     }
