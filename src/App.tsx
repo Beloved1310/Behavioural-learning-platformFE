@@ -4,12 +4,18 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuthStore } from './store/authStore';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
+import { ForgotPassword } from './pages/ForgotPassword';
+import { ResetPassword } from './pages/ResetPassword';
+import { ParentConsent } from './pages/ParentConsent';
+import { RegistrationPending } from './pages/RegistrationPending';
 import { Dashboard } from './pages/Dashboard';
 import { Chat } from './pages/Chat';
 import { Gamification } from './pages/Gamification';
 import { Sessions } from './pages/Sessions';
 import { BehavioralDashboard } from './pages/BehavioralDashboard';
 import { Payment } from './pages/Payment';
+import { Profile } from './pages/Profile';
+import { Settings } from './pages/Settings';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -55,23 +61,47 @@ function App() {
         <div className="App">
           <Routes>
             {/* Public Routes */}
-            <Route 
-              path="/login" 
+            <Route
+              path="/login"
               element={
                 <PublicRoute>
                   <Login />
                 </PublicRoute>
-              } 
+              }
             />
-            <Route 
-              path="/register" 
+            <Route
+              path="/register"
               element={
                 <PublicRoute>
                   <Register />
                 </PublicRoute>
-              } 
+              }
             />
-            
+            <Route
+              path="/forgot-password"
+              element={
+                <PublicRoute>
+                  <ForgotPassword />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/reset-password"
+              element={
+                <PublicRoute>
+                  <ResetPassword />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/parent-consent"
+              element={<ParentConsent />}
+            />
+            <Route
+              path="/registration-pending"
+              element={<RegistrationPending />}
+            />
+
             {/* Private Routes */}
             <Route 
               path="/dashboard" 
@@ -118,6 +148,22 @@ function App() {
               element={
                 <PrivateRoute>
                   <Payment />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <PrivateRoute>
+                  <Settings />
                 </PrivateRoute>
               }
             />
