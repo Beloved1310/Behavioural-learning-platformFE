@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useGamificationStore } from '../store/gamificationStore';
 import { useAuthStore } from '../store/authStore';
 import { Quiz, QuizAttempt } from '../types';
-import { GameLayout } from '../components/layout';
+import { DashboardLayout, MainLayout } from '../components/layout/MainLayout';
 
 import { QuizCard } from '../components/gamification/QuizCard';
 import { QuizTaking } from '../components/gamification/QuizTaking';
@@ -116,7 +116,7 @@ export const Gamification: React.FC = () => {
   }
 
   return (
-    <GameLayout enableSidebarToggle={true}>
+    <DashboardLayout>
       <div className="space-y-6">
         {/* User Profile Summary */}
         {userProfile && (
@@ -187,22 +187,22 @@ export const Gamification: React.FC = () => {
         {activeTab === 'quizzes' && (
           <div>
             {/* Filters */}
-            <div className="mb-6 flex flex-col sm:flex-row flex-wrap gap-4">
+            <div className="mb-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <select
                 value={selectedSubject}
                 onChange={(e) => setSelectedSubject(e.target.value)}
-                className="input w-auto"
+                className="w-full sm:w-auto px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
               >
                 <option value="">All Subjects</option>
                 {subjects.map((subject) => (
                   <option key={subject} value={subject}>{subject}</option>
                 ))}
               </select>
-              
+
               <select
                 value={selectedDifficulty}
                 onChange={(e) => setSelectedDifficulty(e.target.value)}
-                className="input w-auto"
+                className="w-full sm:w-auto px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
               >
                 <option value="">All Difficulties</option>
                 {difficulties.map((difficulty) => (
@@ -394,6 +394,6 @@ export const Gamification: React.FC = () => {
           }}
         />
       )}
-    </GameLayout>
+    </DashboardLayout>
   );
 };
