@@ -103,7 +103,22 @@ function App() {
                 </PrivateRoute>
               }
             />
-            
+             <Route
+              path="/behavioral"
+              element={
+                <PrivateRoute>
+                  <BehavioralDashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/payment"
+              element={
+                <PrivateRoute>
+                  <Payment />
+                </PrivateRoute>
+              }
+            />
             {/* 404 Route */}
             <Route 
               path="*" 
