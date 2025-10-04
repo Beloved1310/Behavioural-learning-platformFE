@@ -7,6 +7,7 @@ import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
 import { Gamification } from './pages/Gamification';
 import { Chat } from './pages/Chat';
+import { Sessions } from './pages/Sessions';
 
 const queryClient = new QueryClient({
   defaultOptions: {
