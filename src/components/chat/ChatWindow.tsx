@@ -161,7 +161,7 @@ export const ChatWindow: React.FC = () => {
   return (
     <div className="flex-1 flex flex-col h-full">
       {/* Chat Header */}
-      <div className="bg-white border-b border-gray-200 px-4 py-3">
+      <div className="bg-white border-b border-gray-200 px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="flex -space-x-2">
@@ -184,12 +184,12 @@ export const ChatWindow: React.FC = () => {
               })}
             </div>
             
-            <div>
-              <h3 className="font-semibold text-gray-900">
-                {activeConversation.title || 
+            <div className="min-w-0 flex-1">
+              <h3 className="font-semibold text-gray-900 truncate">
+                {activeConversation.title ||
                  otherParticipants.map(p => `${p.firstName} ${p.lastName}`).join(', ')}
               </h3>
-              <div className="flex items-center space-x-2 text-xs text-gray-500">
+              <div className="flex items-center space-x-2 text-xs text-gray-500 truncate">
                 {otherParticipants.map((participant, index) => {
                   const status = getOnlineStatus(participant.id);
                   const userStatus = onlineUsers.find(u => u.userId === participant.id);
@@ -214,7 +214,7 @@ export const ChatWindow: React.FC = () => {
             </div>
           </div>
           
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 flex-shrink-0">
             <button
               onClick={() => setShowReportDialog(true)}
               className="p-2 text-gray-400 hover:text-red-600 rounded-full hover:bg-gray-100"
@@ -229,7 +229,7 @@ export const ChatWindow: React.FC = () => {
       </div>
 
       {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
         {isLoading && conversationMessages.length === 0 ? (
           <div className="flex justify-center">
             <div className="text-gray-500">Loading messages...</div>
@@ -270,7 +270,7 @@ export const ChatWindow: React.FC = () => {
 
       {/* File Preview */}
       {selectedFiles.length > 0 && (
-        <div className="border-t border-gray-200 p-3 bg-gray-50">
+        <div className="border-t border-gray-200 p-3 sm:p-4 bg-gray-50">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-gray-700">
               {selectedFiles.length} file{selectedFiles.length > 1 ? 's' : ''} selected
@@ -318,8 +318,8 @@ export const ChatWindow: React.FC = () => {
       )}
 
       {/* Message Input */}
-      <div className="bg-white border-t border-gray-200 p-4">
-        <div className="flex items-end space-x-2">
+      <div className="bg-white border-t border-gray-200 p-4 sm:p-6">
+        <div className="flex items-end space-x-2 sm:space-x-3">
           <button
             onClick={() => setShowFileUpload(!showFileUpload)}
             className={`p-2 rounded-full transition-colors ${

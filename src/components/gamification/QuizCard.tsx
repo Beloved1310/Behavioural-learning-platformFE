@@ -47,42 +47,42 @@ export const QuizCard: React.FC<QuizCardProps> = ({
   };
 
   return (
-    <div className="card p-6 hover:shadow-lg transition-shadow duration-200">
-      <div className="flex justify-between items-start mb-4">
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+    <div className="card p-4 sm:p-6 hover:shadow-lg transition-shadow duration-200 flex flex-col h-full">
+      <div className="flex justify-between items-start mb-4 gap-3">
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
             {quiz.title}
           </h3>
-          <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+          <p className="text-xs sm:text-sm text-gray-600 mb-3 line-clamp-2">
             {quiz.description}
           </p>
         </div>
-        <div className="ml-4">
-          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getDifficultyColor(quiz.difficulty)}`}>
+        <div className="flex-shrink-0">
+          <span className={`inline-flex items-center px-2 sm:px-2.5 py-0.5 rounded-full text-xs font-medium border whitespace-nowrap ${getDifficultyColor(quiz.difficulty)}`}>
             {getDifficultyIcon(quiz.difficulty)} {quiz.difficulty.charAt(0).toUpperCase() + quiz.difficulty.slice(1)}
           </span>
         </div>
       </div>
 
       {/* Quiz Stats */}
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="text-center p-3 bg-blue-50 rounded-lg">
-          <div className="text-lg font-bold text-blue-600">{quiz.questions.length}</div>
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4">
+        <div className="text-center p-2 sm:p-3 bg-blue-50 rounded-lg">
+          <div className="text-base sm:text-lg font-bold text-blue-600">{quiz.questions.length}</div>
           <div className="text-xs text-blue-800">Questions</div>
         </div>
-        <div className="text-center p-3 bg-purple-50 rounded-lg">
-          <div className="text-lg font-bold text-purple-600">{quiz.pointsReward}</div>
+        <div className="text-center p-2 sm:p-3 bg-purple-50 rounded-lg">
+          <div className="text-base sm:text-lg font-bold text-purple-600">{quiz.pointsReward}</div>
           <div className="text-xs text-purple-800">Points</div>
         </div>
       </div>
 
       {/* Subject and Time */}
-      <div className="flex items-center justify-between mb-4">
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+      <div className="flex items-center justify-between mb-4 gap-2">
+        <span className="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 truncate max-w-[60%]">
           📚 {quiz.subject}
         </span>
         {quiz.timeLimit && (
-          <span className="text-xs text-gray-500 flex items-center">
+          <span className="text-xs text-gray-500 flex items-center flex-shrink-0">
             ⏰ {quiz.timeLimit} min{quiz.timeLimit > 1 ? 's' : ''}
           </span>
         )}
@@ -127,21 +127,23 @@ export const QuizCard: React.FC<QuizCardProps> = ({
       )}
 
       {/* Action Button */}
-      <Button
-        onClick={() => onStartQuiz(quiz.id)}
-        disabled={!quiz.isActive || isLoading}
-        size="lg"
-        className="w-full"
-        isLoading={isLoading}
-      >
-        {!quiz.isActive ? 'Coming Soon' : 'Start Quiz'}
-      </Button>
+      <div className="mt-auto">
+        <Button
+          onClick={() => onStartQuiz(quiz.id)}
+          disabled={!quiz.isActive || isLoading}
+          size="lg"
+          className="w-full"
+          isLoading={isLoading}
+        >
+          {!quiz.isActive ? 'Coming Soon' : 'Start Quiz'}
+        </Button>
 
-      {/* Additional Info */}
-      <div className="mt-3 text-center">
-        <span className="text-xs text-gray-400">
-          Created {new Date(quiz.createdAt).toLocaleDateString()}
-        </span>
+        {/* Additional Info */}
+        <div className="mt-3 text-center">
+          <span className="text-xs text-gray-400">
+            Created {new Date(quiz.createdAt).toLocaleDateString()}
+          </span>
+        </div>
       </div>
     </div>
   );

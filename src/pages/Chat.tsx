@@ -3,7 +3,7 @@ import { ChatList } from '../components/chat/ChatList';
 import { ChatWindow } from '../components/chat/ChatWindow';
 import { useChatStore } from '../store/chatStore';
 import { useAuthStore } from '../store/authStore';
-import { ChatLayout } from '../components/layout';
+import { DashboardLayout, MainLayout } from '../components/layout/MainLayout';
 
 export const Chat: React.FC = () => {
   const { user } = useAuthStore();
@@ -77,11 +77,13 @@ export const Chat: React.FC = () => {
   }
 
   return (
-    <ChatLayout>
-      <div className="h-full flex">
-        <ChatList />
-        <ChatWindow />
+    <DashboardLayout>
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden" style={{ height: 'calc(100vh - 12rem)' }}>
+        <div className="h-full flex flex-col lg:flex-row">
+          <ChatList />
+          <ChatWindow />
+        </div>
       </div>
-    </ChatLayout>
+    </DashboardLayout>
   );
 };
