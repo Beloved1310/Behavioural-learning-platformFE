@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka+One:wght@400&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --color-border: 253 224 71; /* Bright yellow border */
+    --color-background: 255 251 235; /* Soft cream background */
+    --color-foreground: 126 34 206; /* Purple text for headings */
+    --color-card: 255 255 255;
+    --color-card-foreground: 126 34 206;
+    --color-muted-foreground: 156 163 175; /* Gray text for subtler elements */
+    --color-input: 253 224 71; /* Bright yellow border for inputs */
+    --color-ring: 236 72 153; /* Pink focus ring */
+    --color-primary-600: 147 51 234; /* Vibrant purple primary */
+    --color-primary-700: 126 34 206; /* Darker purple */
+    --color-primary-800: 109 40 217; /* Even darker purple */
+    --color-secondary-100: 254 240 138; /* Light yellow */
+    --color-secondary-200: 253 224 71; /* Bright yellow */
+    --color-secondary-300: 234 179 8; /* Darker yellow */
+    --color-secondary-900: 88 28 135; /* Purple for dark text */
+    --color-accent-pink: 236 72 153; /* Pink accent */
+    --color-accent-orange: 251 146 60; /* Orange accent */
+    --color-accent-green: 34 197 94; /* Green accent */
+    --color-accent-blue: 59 130 246; /* Blue accent */
+  }
+
+  .dark {
+    --color-border: 75 85 99; /* Gray border for dark mode */
+    --color-background: 17 24 39; /* Dark gray background */
+    --color-foreground: 243 244 246; /* Light gray text */
+    --color-card: 31 41 55; /* Dark card background */
+    --color-card-foreground: 243 244 246; /* Light text on cards */
+    --color-muted-foreground: 156 163 175; /* Muted gray */
+    --color-input: 75 85 99; /* Gray input border */
+    --color-ring: 147 51 234; /* Purple focus ring */
+    --color-primary-600: 147 51 234; /* Purple primary */
+    --color-primary-700: 168 85 247; /* Lighter purple */
+    --color-primary-800: 192 132 252; /* Even lighter purple */
+    --color-secondary-100: 55 65 81; /* Dark gray */
+    --color-secondary-200: 75 85 99; /* Medium gray */
+    --color-secondary-300: 107 114 128; /* Light gray */
+    --color-secondary-900: 243 244 246; /* Light text */
+    --color-accent-pink: 236 72 153; /* Pink accent */
+    --color-accent-orange: 251 146 60; /* Orange accent */
+    --color-accent-green: 34 197 94; /* Green accent */
+    --color-accent-blue: 59 130 246; /* Blue accent */
+  }
+
+  * {
+    border-color: rgb(var(--color-border));
+  }
+
+  body {
+    background: linear-gradient(135deg, #fefce8 0%, #fff7ed 50%, #f0f9ff 100%);
+    background-attachment: fixed;
+    color: rgb(var(--color-foreground));
+    font-family:
+      'Nunito', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+    margin: 0;
+    min-height: 100vh;
+    font-size: 16px; /* Larger base font for readability */
+    line-height: 1.6; /* Better line height for kids */
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .dark body {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #0f172a 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: rgb(var(--color-foreground));
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center font-bold;
+    border-radius: 1rem; /* Much more rounded for kids */
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+    min-height: 48px; /* Larger touch target for kids */
+    font-family: 'Nunito', sans-serif;
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transform: translateY(0);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn:focus-visible {
+    outline: none;
+    --tw-ring-offset-width: 3px;
+    --tw-ring-color: rgb(var(--color-ring));
+    --tw-ring-offset-color: rgb(var(--color-background));
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width))
+      var(--tw-ring-color);
+  }
+
+  .btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--color-primary-600)) 0%,
+      rgb(var(--color-accent-pink)) 100%
+    );
+    color: rgb(255 255 255);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, rgb(var(--color-primary-700)) 0%, rgb(219 39 119) 100%);
+  }
+
+  .btn-primary:active {
+    background: linear-gradient(135deg, rgb(var(--color-primary-800)) 0%, rgb(190 24 93) 100%);
+  }
+
+  .btn-secondary {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--color-secondary-200)) 0%,
+      rgb(var(--color-accent-orange)) 100%
+    );
+    color: rgb(var(--color-secondary-900));
+  }
+
+  .btn-secondary:hover {
+    background: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(249 115 22) 100%);
+  }
+
+  .btn-secondary:active {
+    background: linear-gradient(135deg, rgb(var(--color-secondary-300)) 0%, rgb(234 88 12) 100%);
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: rgb(var(--color-primary-600));
+  }
+
+  .btn-ghost:hover {
+    background: linear-gradient(135deg, rgb(var(--color-secondary-100)) 0%, rgb(254 240 138) 100%);
+    color: rgb(var(--color-secondary-900));
+  }
+
+  .card {
+    @apply border-2 shadow-lg;
+    border-radius: 1.5rem; /* Very rounded cards */
+    background-color: rgb(var(--color-card));
+    color: rgb(var(--color-card-foreground));
+    border-color: rgb(var(--color-border));
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .input {
+    @apply flex w-full border-2 px-4 py-3;
+    border-radius: 1rem; /* More rounded inputs */
+    min-height: 3rem; /* Larger inputs for kids */
+    font-size: 1rem; /* Larger font */
+    background-color: rgb(255 255 255);
+    border-color: rgb(var(--color-input));
+    font-family: 'Nunito', sans-serif;
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    transition: all 200ms ease;
+  }
+
+  .input:hover {
+    border-color: rgb(var(--color-primary-600));
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .input::placeholder {
+    color: rgb(var(--color-muted-foreground));
+    font-weight: 400;
+  }
+
+  .input:focus-visible {
+    outline: none;
+    --tw-ring-offset-width: 3px;
+    --tw-ring-color: rgb(var(--color-ring));
+    --tw-ring-offset-color: rgb(255 255 255);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width))
+      var(--tw-ring-color);
+    border-color: rgb(var(--color-primary-600));
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 0 0 3px rgba(236, 72, 153, 0.1);
+  }
+
+  .input:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: rgb(249 250 251);
+  }
+
+  .input[type='file'] {
+    border: 2px dashed rgb(var(--color-input));
+    background-color: rgb(255 251 235);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  /* Dashboard animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .transition-sidebar {
+    transition:
+      width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      margin 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Responsive grid improvements */
+  @media (max-width: 1024px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dashboard-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  /* Toast animations */
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+  }
+}

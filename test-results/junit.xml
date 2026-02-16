@@ -1,0 +1,92 @@
+<testsuites id="" name="" tests="40" failures="0" skipped="0" errors="0" time="208.047377">
+<testsuite name="session-booking.spec.ts" timestamp="2026-01-23T09:39:29.433Z" hostname="chromium" tests="8" failures="0" skipped="0" time="36.479" errors="0">
+<testcase name="Session Booking E2E Tests › should navigate to sessions page" classname="session-booking.spec.ts" time="6.221">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display calendar on sessions page" classname="session-booking.spec.ts" time="5.245">
+</testcase>
+<testcase name="Session Booking E2E Tests › should open session creation form" classname="session-booking.spec.ts" time="5.894">
+</testcase>
+<testcase name="Session Booking E2E Tests › should create a new session" classname="session-booking.spec.ts" time="6.247">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display session list" classname="session-booking.spec.ts" time="5.02">
+</testcase>
+<testcase name="Session Booking E2E Tests › should navigate between calendar months" classname="session-booking.spec.ts" time="4.763">
+</testcase>
+<testcase name="Authentication E2E › should login successfully" classname="session-booking.spec.ts" time="1.109">
+</testcase>
+<testcase name="Authentication E2E › should show error on invalid login" classname="session-booking.spec.ts" time="1.98">
+</testcase>
+</testsuite>
+<testsuite name="session-booking.spec.ts" timestamp="2026-01-23T09:39:29.433Z" hostname="firefox" tests="8" failures="0" skipped="0" time="38.255" errors="0">
+<testcase name="Session Booking E2E Tests › should navigate to sessions page" classname="session-booking.spec.ts" time="5.551">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display calendar on sessions page" classname="session-booking.spec.ts" time="5.53">
+</testcase>
+<testcase name="Session Booking E2E Tests › should open session creation form" classname="session-booking.spec.ts" time="6.28">
+</testcase>
+<testcase name="Session Booking E2E Tests › should create a new session" classname="session-booking.spec.ts" time="6.342">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display session list" classname="session-booking.spec.ts" time="5.579">
+</testcase>
+<testcase name="Session Booking E2E Tests › should navigate between calendar months" classname="session-booking.spec.ts" time="5.685">
+</testcase>
+<testcase name="Authentication E2E › should login successfully" classname="session-booking.spec.ts" time="1.266">
+</testcase>
+<testcase name="Authentication E2E › should show error on invalid login" classname="session-booking.spec.ts" time="2.022">
+</testcase>
+</testsuite>
+<testsuite name="session-booking.spec.ts" timestamp="2026-01-23T09:39:29.433Z" hostname="webkit" tests="8" failures="0" skipped="0" time="44.445" errors="0">
+<testcase name="Session Booking E2E Tests › should navigate to sessions page" classname="session-booking.spec.ts" time="6.91">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display calendar on sessions page" classname="session-booking.spec.ts" time="7.129">
+</testcase>
+<testcase name="Session Booking E2E Tests › should open session creation form" classname="session-booking.spec.ts" time="7.658">
+</testcase>
+<testcase name="Session Booking E2E Tests › should create a new session" classname="session-booking.spec.ts" time="7.821">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display session list" classname="session-booking.spec.ts" time="6.088">
+</testcase>
+<testcase name="Session Booking E2E Tests › should navigate between calendar months" classname="session-booking.spec.ts" time="5.485">
+</testcase>
+<testcase name="Authentication E2E › should login successfully" classname="session-booking.spec.ts" time="1.111">
+</testcase>
+<testcase name="Authentication E2E › should show error on invalid login" classname="session-booking.spec.ts" time="2.243">
+</testcase>
+</testsuite>
+<testsuite name="session-booking.spec.ts" timestamp="2026-01-23T09:39:29.433Z" hostname="Mobile Chrome" tests="8" failures="0" skipped="0" time="36.305" errors="0">
+<testcase name="Session Booking E2E Tests › should navigate to sessions page" classname="session-booking.spec.ts" time="4.31">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display calendar on sessions page" classname="session-booking.spec.ts" time="5.361">
+</testcase>
+<testcase name="Session Booking E2E Tests › should open session creation form" classname="session-booking.spec.ts" time="6.276">
+</testcase>
+<testcase name="Session Booking E2E Tests › should create a new session" classname="session-booking.spec.ts" time="6.172">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display session list" classname="session-booking.spec.ts" time="5.426">
+</testcase>
+<testcase name="Session Booking E2E Tests › should navigate between calendar months" classname="session-booking.spec.ts" time="5.285">
+</testcase>
+<testcase name="Authentication E2E › should login successfully" classname="session-booking.spec.ts" time="1.278">
+</testcase>
+<testcase name="Authentication E2E › should show error on invalid login" classname="session-booking.spec.ts" time="2.197">
+</testcase>
+</testsuite>
+<testsuite name="session-booking.spec.ts" timestamp="2026-01-23T09:39:29.433Z" hostname="Mobile Safari" tests="8" failures="0" skipped="0" time="43.624" errors="0">
+<testcase name="Session Booking E2E Tests › should navigate to sessions page" classname="session-booking.spec.ts" time="4.863">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display calendar on sessions page" classname="session-booking.spec.ts" time="6.534">
+</testcase>
+<testcase name="Session Booking E2E Tests › should open session creation form" classname="session-booking.spec.ts" time="6.952">
+</testcase>
+<testcase name="Session Booking E2E Tests › should create a new session" classname="session-booking.spec.ts" time="5.921">
+</testcase>
+<testcase name="Session Booking E2E Tests › should display session list" classname="session-booking.spec.ts" time="7.475">
+</testcase>
+<testcase name="Session Booking E2E Tests › should navigate between calendar months" classname="session-booking.spec.ts" time="8.618">
+</testcase>
+<testcase name="Authentication E2E › should login successfully" classname="session-booking.spec.ts" time="1.15">
+</testcase>
+<testcase name="Authentication E2E › should show error on invalid login" classname="session-booking.spec.ts" time="2.111">
+</testcase>
+</testsuite>
+</testsuites>
